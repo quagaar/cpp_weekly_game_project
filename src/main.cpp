@@ -76,7 +76,7 @@ int main([[maybe_unused]] int argc, [[maybe_unused]] const char **argv)
 
     int index = 0;
     for (const auto &step : { "The Plan", "Getting Started", "Finding Errors As Soon As Possible", "Handling Command Line Parameters", "C++ 20 So Far", "Reading SFML Input States", "Managing Game State", "Making Our Game Testable", "Making Game State Allocator Aware", "Add Logging To Game Engine", "Draw A Game Map", "Dialog Trees", "Porting From SFML To SDL" }) {
-      ImGui::Checkbox(fmt::format("{} : {}", index, step).c_str(), std::next(begin(states), index));
+      ImGui::Checkbox(fmt::format("{} : {}", index, step).c_str(), &*std::next(begin(states), index));
       ++index;
     }
 
